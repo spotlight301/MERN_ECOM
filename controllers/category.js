@@ -30,8 +30,6 @@ exports.read = (req, res) => {
 };
 
 exports.update = (req, res) => {
-  // console.log('req.body', req.body);
-  // console.log('category update param', req.params.categoryId);
   const category = req.category;
   category.name = req.body.name;
   category.save((err, data) => {
