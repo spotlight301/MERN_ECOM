@@ -29,8 +29,7 @@ exports.signin = (req, res) => {
         error: "User with that email doesn't exist. Please signup.",
       });
     }
-    // if user found make sure the email and password match
-    // create authenticate method in user model
+
     if (!user.authenticate(password)) {
       return res.status(401).json({
         error: "Email and password didn't match",
