@@ -6,7 +6,6 @@ const { errorHandler } = require('../helpers/dbErrorHandler');
 require('dotenv').config();
 
 exports.signup = (req, res) => {
-  // console.log('req.body', req.body);
   const user = new User(req.body);
   user.save((err, user) => {
     if (err) {
@@ -23,7 +22,6 @@ exports.signup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
-  // find the user based on email
   const { email, password } = req.body;
   User.findOne({ email }, (err, user) => {
     if (err || !user) {
